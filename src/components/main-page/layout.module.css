@@ -1,0 +1,23 @@
+.layout {
+  width: 800px;
+  height: 100vh;
+  background: #ffffff;
+  margin: 0 auto;
+}
+
+.header {
+  width: 800px;
+  height: 80px;
+  background: #7695ec;
+  border-bottom: 1px solid #999999;
+}
+
+.header h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  color: #ffffff;
+  padding: 2rem;
+}

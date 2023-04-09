@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Roboto } from "next/font/google";
-import SignUpModal from "@/components/signupmodal";
+import SignUpModal from "@/components/signup/signupmodal";
+import Layout from "@/components/main-page/layout";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -16,9 +17,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={roboto.className}>
-        <SignUpModal />
-      </main>
+      <body>
+        <main className={roboto.className} style={{ background: "#DDDDDD" }}>
+          <SignUpModal />
+          <Layout></Layout>
+        </main>
+      </body>
     </>
   );
 }
