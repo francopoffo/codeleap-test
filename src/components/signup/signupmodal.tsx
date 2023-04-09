@@ -22,6 +22,7 @@ const SignUpModal: React.FC = () => {
               <label htmlFor="username">Please enter your username</label>
               <input
                 type="text"
+                id="username"
                 placeholder="Your name"
                 value={username}
                 onChange={(e) => {

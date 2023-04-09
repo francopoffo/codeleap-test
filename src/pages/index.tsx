@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Roboto } from "next/font/google";
 import SignUpModal from "@/components/signup/signupmodal";
 import Layout from "@/components/main-page/layout";
+import NewPostForm from "@/components/main-page/new-post/new-post-form";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -20,7 +21,9 @@ export default function Home() {
       <body>
         <main className={roboto.className} style={{ background: "#DDDDDD" }}>
           <SignUpModal />
-          <Layout></Layout>
+          <Layout>
+            <NewPostForm />
+          </Layout>
         </main>
       </body>
     </>
