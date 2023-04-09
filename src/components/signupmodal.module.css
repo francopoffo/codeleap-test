@@ -1,0 +1,84 @@
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background-color: #dddddd;
+}
+
+.signup {
+  position: absolute;
+  width: 500px;
+  height: 205px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 16px;
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.signup h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.signup div {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 0.5rem;
+}
+
+.signup input {
+  width: 452px;
+  height: 32px;
+  padding-left: 0.5rem;
+  background: #ffffff;
+  border: 1px solid #777777;
+  border-radius: 8px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.signup button {
+  width: 111px;
+  height: 32px;
+  align-self: end;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.signup button:hover {
+  cursor: pointer;
+}
