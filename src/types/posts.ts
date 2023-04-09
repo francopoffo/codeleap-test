@@ -1,10 +1,9 @@
 export type Posts =
   | {
-      id: any;
-      username: any;
-      created_datetime: any;
-      title: any;
-      content: any;
+      id: string;
+      username: string;
+      created_datetime: string;
+      title: string;
+      content: string;
       isEditable: boolean;
-    }[]
-  | any;
+    }[];

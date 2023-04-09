@@ -68,3 +68,7 @@
   color: #ffffff;
   margin-right: 16px;
 }
+
+.form button:hover {
+  cursor: pointer;
+}
