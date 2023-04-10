@@ -36,6 +36,9 @@ const SignUpModal: React.FC = () => {
                   if (username.trim() != "") {
                     setButtonDisabled(false);
                   }
+                  if (username.trim() == "") {
+                    setButtonDisabled(true);
+                  }
                 }}
               ></input>
             </div>

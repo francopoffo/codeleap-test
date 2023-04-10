@@ -43,6 +43,8 @@
 
 .inputs input,
 .contentTextArea {
+  font-family: "Roboto";
+  font-style: normal;
   width: 612px;
   background: #ffffff;
   border: 1px solid #777777;

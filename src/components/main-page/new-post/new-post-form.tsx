@@ -7,6 +7,7 @@ import { store } from "@/store/updateSlice";
 const NewPostForm: React.FC = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -49,6 +50,12 @@ const NewPostForm: React.FC = () => {
           value={title}
           onChange={(e) => {
             setTitle(e.target.value);
+            if (content.trim() != "" && title.trim() != "") {
+              setButtonDisabled(false);
+            }
+            if (content.trim() == "" || title.trim() == "") {
+              setButtonDisabled(true);
+            }
           }}
         ></input>
       </div>
@@ -61,10 +68,24 @@ const NewPostForm: React.FC = () => {
           value={content}
           onChange={(e) => {
             setContent(e.target.value);
+            if (content.trim() != "" && title.trim() != "") {
+              setButtonDisabled(false);
+            }
+            if (content.trim() == "" || title.trim() == "") {
+              setButtonDisabled(true);
+            }
           }}
         ></textarea>
       </div>
-      <button type="submit">Create</button>
+      <button
+        type="submit"
+        disabled={buttonDisabled}
+        style={
+          buttonDisabled ? { background: "grey" } : { background: "#7695EC" }
+        }
+      >
+        Create
+      </button>
     </form>
   );
 };
