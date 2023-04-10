@@ -4,6 +4,4 @@ export type Posts =
       username: string;
       created_datetime: string;
       title: string;
-      content: string;
-      isEditable: boolean;
     }[];

@@ -2,7 +2,7 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook } from "react-redux";
 import { useSelector } from "react-redux";
 
-const initialState = { counter: 0 };
+const initialState = { counter: 0, user: "" };
 
 export const updateSlice = createSlice({
   name: "counter",
@@ -10,6 +10,9 @@ export const updateSlice = createSlice({
   reducers: {
     add(state) {
       state.counter++;
+    },
+    setUser(state, action) {
+      state.user = action.payload;
     },
   },
 });

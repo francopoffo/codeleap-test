@@ -4,5 +4,4 @@ export type PostType = {
   created_datetime: string;
   title: string;
   content: string;
-  isEditable: boolean;
 };

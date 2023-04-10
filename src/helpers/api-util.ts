@@ -13,7 +13,7 @@ export async function getPosts() {
       created_datetime: postData[key].created_datetime,
       title: postData[key].title,
       content: postData[key].content,
-      isEditable: false,
+      isEditable: postData[key].content,
     });
   }
 

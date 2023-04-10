@@ -8,7 +8,7 @@ const PostList: React.FC<{ posts: Posts }> = (props) => {
 
   return (
     <ul className={classes.posts}>
-      {posts.map((post: { id: React.Key | null | undefined }) => (
+      {posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}
     </ul>

@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import classes from "./signupmodal.module.css";
+import { updateAction } from "@/store/updateSlice";
+import { useDispatch } from "react-redux";
 
 const SignUpModal: React.FC = () => {
   const [username, setUsername] = useState("");
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [modal, setModal] = useState(true);
 
+  const dispatch = useDispatch();
+
   const onSubmitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     localStorage.setItem("username", username);
+    dispatch(updateAction.setUser(username));
+    console.log(username);
     setModal(false);
   };
 
