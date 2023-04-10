@@ -74,3 +74,13 @@
   line-height: 21px;
   color: #000000;
 }
+
+@media screen and (max-width: 800px) {
+  .post {
+    width: 95%;
+  }
+
+  .header {
+    width: 100%;
+  }
+}

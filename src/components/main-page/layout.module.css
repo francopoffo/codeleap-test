@@ -24,3 +24,13 @@
   color: #ffffff;
   padding: 2rem;
 }
+
+@media screen and (max-width: 800px) {
+  .layout {
+    width: 100%;
+  }
+
+  .header {
+    width: 100%;
+  }
+}

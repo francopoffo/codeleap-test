@@ -74,3 +74,14 @@
 .form button:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+  .form {
+    width: 95%;
+  }
+
+  .inputs input,
+  .contentTextArea {
+    width: 95%;
+  }
+}
