@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import classes from "./new-post-form.module.css";
+import { updateAction } from "@/store/updateSlice";
+import { useDispatch } from "react-redux";
+import { store } from "@/store/updateSlice";
 
 const NewPostForm: React.FC = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
+  const dispatch = useDispatch();
+
   async function onSubmitHandler(e: React.FormEvent) {
     e.preventDefault();
+
+    dispatch(updateAction.add());
+
+    const counter = store.getState().counter;
+    console.log("O valor do contador é:" + counter);
 
     const newPost = {
       username: localStorage.getItem("username"),
@@ -23,7 +33,6 @@ const NewPostForm: React.FC = () => {
     });
 
     const data = postRequest.json();
-    console.log(data);
 
     setTitle("");
     setContent("");
