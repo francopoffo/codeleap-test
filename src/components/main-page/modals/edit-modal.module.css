@@ -16,7 +16,7 @@
 .popup {
   position: absolute;
   width: 660px;
-  height: 146px;
+  height: 334px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -29,9 +29,40 @@
   justify-content: space-between;
 }
 
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 0.5rem;
+}
+
+.inputs input,
+.contentTextArea {
+  width: 612px;
+  background: #ffffff;
+  border: 1px solid #777777;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 0.5rem;
+}
+
+.inputs input {
+  height: 32px;
+}
+.contentTextArea {
+  padding: 0.5rem;
+}
+
 .actions {
-  align-self: end;
   margin-right: 12px;
+  align-self: end;
 }
 
 .cancel {
@@ -48,10 +79,10 @@
   cursor: pointer;
 }
 
-.delete {
+.edit {
   width: 120px;
   height: 32px;
-  background: #ff5151;
+  background: #47b960;
   border-radius: 8px;
   border: none;
   font-family: "Roboto";

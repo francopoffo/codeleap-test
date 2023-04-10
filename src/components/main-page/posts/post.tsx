@@ -6,11 +6,13 @@ import { MdDeleteForever } from "react-icons/md";
 import { store, updateAction } from "@/store/updateSlice";
 import { useDispatch } from "react-redux";
 import DeleteModal from "../modals/delete-modal";
+import EditModal from "../modals/edit-modal";
 
 const Post: React.FC<{ post: PostType }> = (props) => {
   const post = props.post;
 
-  const [modal, setModal] = useState(false);
+  const [deleteModal, setDeleteModal] = useState(false);
+  const [editModal, setEditModal] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -20,22 +22,42 @@ const Post: React.FC<{ post: PostType }> = (props) => {
 
   const user = store.getState().counter.user;
 
-  function toggleModal() {
-    setModal(!modal);
+  function toggleDeleteModal() {
+    setDeleteModal(!deleteModal);
+  }
+
+  function toggleEditModal() {
+    setEditModal(!editModal);
   }
 
   async function onDeleteHandler() {
-    console.log(post.id);
     fetch(`https://dev.codeleap.co.uk/careers/${post.id}/`, {
       method: "DELETE",
     });
     dispatch(updateAction.add());
   }
 
+  async function onEditHandler(title: string, content: string) {
+    fetch(`https://dev.codeleap.co.uk/careers/${post.id}/`, {
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        title: title,
+        content: content,
+      }),
+    });
+    dispatch(updateAction.add());
+  }
+
   return (
     <>
-      {modal && (
-        <DeleteModal onDelete={onDeleteHandler} onCancel={toggleModal} />
+      {deleteModal && (
+        <DeleteModal onDelete={onDeleteHandler} onCancel={toggleDeleteModal} />
+      )}
+      {editModal && (
+        <EditModal onEdit={onEditHandler} onCancel={toggleEditModal} />
       )}
       <li className={classes.post}>
         <div className={classes.header}>
@@ -43,13 +65,13 @@ const Post: React.FC<{ post: PostType }> = (props) => {
 
           {user == post.username && (
             <div className={classes.actions}>
-              <button className={classes.action} onClick={toggleModal}>
+              <button className={classes.action} onClick={toggleDeleteModal}>
                 <MdDeleteForever
                   className={classes.icons}
                   style={{ color: "#FFFFFF", fontSize: "28px" }}
                 />
               </button>
-              <button className={classes.action}>
+              <button className={classes.action} onClick={toggleEditModal}>
                 <BiEdit
                   className={classes.icons}
                   style={{ color: "#FFFFFF", fontSize: "28px" }}
