@@ -31,23 +31,29 @@ const Post: React.FC<{ post: PostType }> = (props) => {
   }
 
   async function onDeleteHandler() {
-    fetch(`https://dev.codeleap.co.uk/careers/${post.id}/`, {
-      method: "DELETE",
-    });
+    const postDeletion = await fetch(
+      `https://dev.codeleap.co.uk/careers/${post.id}/`,
+      {
+        method: "DELETE",
+      }
+    );
     dispatch(updateAction.add());
   }
 
   async function onEditHandler(title: string, content: string) {
-    fetch(`https://dev.codeleap.co.uk/careers/${post.id}/`, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        title: title,
-        content: content,
-      }),
-    });
+    const postEdition = await fetch(
+      `https://dev.codeleap.co.uk/careers/${post.id}/`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          title: title,
+          content: content,
+        }),
+      }
+    );
     dispatch(updateAction.add());
   }
 

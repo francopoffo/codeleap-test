@@ -14,8 +14,6 @@ const NewPostForm: React.FC = () => {
   async function onSubmitHandler(e: React.FormEvent) {
     e.preventDefault();
 
-    dispatch(updateAction.add());
-
     const counter = store.getState().counter;
     console.log("O valor do contador é:" + counter);
 
@@ -32,6 +30,8 @@ const NewPostForm: React.FC = () => {
       },
       body: JSON.stringify(newPost),
     });
+
+    dispatch(updateAction.add());
 
     const data = postRequest.json();
 
