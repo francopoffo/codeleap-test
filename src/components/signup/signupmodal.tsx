@@ -23,7 +23,7 @@ const SignUpModal: React.FC = () => {
       <div className={classes.modal}>
         <div className={classes.overlay}>
           <form className={classes.signup} onSubmit={onSubmitHandler}>
-            <h2>Welcome to CodeLeap network!</h2>
+            <h2>Welcome to the network!</h2>
             <div>
               <label htmlFor="username">Please enter your username</label>
               <input
